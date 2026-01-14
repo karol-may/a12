@@ -31,7 +31,6 @@ class OfficeChair extends Chair {
     super(name, color, headrest)
     this.nowheels = nowheels
   }
-  
 }
 
 export default function Home() {
@@ -39,7 +38,10 @@ export default function Home() {
 
   let chair1 = new Chair("Chair1","#ff0000",true);
   let throne2 = new Throne("Throne1","#00ff00",true);
+  throne2.color = "zmienione";
+
   let office3 = new OfficeChair("OfficeChair1","#0000ff",true,5);
+  
 
   let chairsCollection = [chair1,throne2,office3];
   console.log(chairsCollection);
@@ -51,7 +53,7 @@ export default function Home() {
       <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
         <ul>
         {chairsCollection.map((chair, index)=>{
-          return <li key={index} style={{color: chair.color}}>{chair.color}</li>
+          return <li key={index} style={{color: chair.color}}>{chair.name}</li>
         })}
         </ul>
       </main>
